@@ -23,19 +23,40 @@ public class buku27 {
         System.out.println("Harga Rp: "+harga);
     }
 
-    void terjual(int jml){
+    int terjual(int jml){
         if (stok > 0) {
             stok -= jml;
         }
+        return stok;
     }
 
-    void restock(int jml){
-        stok += jml;
+    void restock(int n){
+        stok += n;
     }
 
-    void gantiHarga(int hrg){
+    int gantiHarga(int hrg){
         harga = hrg;
+        return hrg;
     }
-    
+
+    int hitungHargaTotal(int jml){
+        jml *= harga;
+        return jml;
+    }
+
+    int hitungDiskon(int hrg){
+        int diskon;
+        if (hrg > 150000) {
+            diskon = (int) (hrg * 0.12);
+        }else if (hrg >= 75000) {
+            diskon = (int) (hrg * 0.05);
+        }else
+            diskon = 0;
+        return diskon;
+    }
+
+    int hitungHargaBayar(int hargaTotal, int diskon){
+        return hargaTotal -= diskon;
+    }
     
 }

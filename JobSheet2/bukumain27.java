@@ -18,7 +18,14 @@ public class bukumain27 {
         bk2.tampilInformasi();
 
         buku27 bukuTomi = new buku27("Hanya Pria Biasa", "Tomi Martino Affandi", 500, 100, 200000);
-        bukuTomi.terjual(50);
         bukuTomi.tampilInformasi();
+        int hargaTotal = bukuTomi.hitungHargaTotal(50);
+        int diskon = bukuTomi.hitungDiskon(hargaTotal);
+        int hargaBayar = bukuTomi.hitungHargaBayar(hargaTotal, diskon);
+        
+
+        System.out.println("Harga Total: "+hargaTotal);
+        System.out.println("Harga Diskon: "+diskon);
+        System.out.println("Harga Bayar: "+hargaBayar);
     }
 }
