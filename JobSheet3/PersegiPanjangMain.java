@@ -1,25 +1,24 @@
 package JobSheet3;
+import java.util.Scanner;
 public class PersegiPanjangMain {
-    public int panjang;
-    public int lebar;
     public static void main(String[] args) {
-        PersegiPanjangMain[] ppArray = new PersegiPanjangMain[3];
+        Scanner sc = new Scanner(System.in);
+        PersegiPanjang[] ppArray = new PersegiPanjang[3];
+
         
-        ppArray[0] = new PersegiPanjangMain();
-        ppArray[0].panjang = 110;
-        ppArray[0].lebar = 30;
+        for (int i = 0; i < ppArray.length; i++) {
+            ppArray[i] = new PersegiPanjang();
+            System.out.println("Persegi panjang ke: "+i);
+            System.out.print("Masukan panjang: ");
+            ppArray[i].panjang = sc.nextInt();
+            System.out.print("Masukkan lebar: ");
+            ppArray[i].lebar = sc.nextInt();
+        }
 
-        ppArray[1] = new PersegiPanjangMain();
-        ppArray[1].panjang = 80;
-        ppArray[1].lebar = 40;
-
-        ppArray[2] = new PersegiPanjangMain();
-        ppArray[2].panjang = 100;
-        ppArray[2].lebar = 20;
-
-        System.out.println("persegi panjang ke 0, panjang: "+ ppArray[0].panjang+", lebar: "+ppArray[0].lebar);
-        System.out.println("persegi panjang ke 1, panjang: "+ ppArray[1].panjang+", lebar: "+ppArray[1].lebar);
-        System.out.println("persegi panjang ke 2, panjang: "+ ppArray[2].panjang+", lebar: "+ppArray[2].lebar);
+        for (int i = 0; i < ppArray.length; i++) {
+            System.out.println("persegi panjang ke: "+i);
+            System.out.println("panjang: "+ ppArray[i].panjang+", lebar: "+ppArray[i].lebar);
+        }
 
     }
 }
