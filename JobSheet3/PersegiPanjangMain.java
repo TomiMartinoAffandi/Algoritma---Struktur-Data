@@ -6,7 +6,6 @@ public class PersegiPanjangMain {
         System.out.print("Masukan jumlah data: ");
         PersegiPanjang[] ppArray = new PersegiPanjang[sc.nextInt()];
 
-        
         for (int i = 0; i < ppArray.length; i++) {
             ppArray[i] = new PersegiPanjang();
             System.out.println("Persegi panjang ke: "+i);
