@@ -1,18 +1,19 @@
 package JobSheet3;
-
 public class PersegiPanjangMain {
+    public int panjang;
+    public int lebar;
     public static void main(String[] args) {
-        PersegiPanjang[] ppArray = new PersegiPanjang[3];
+        PersegiPanjangMain[] ppArray = new PersegiPanjangMain[3];
         
-        ppArray[0] = new PersegiPanjang();
+        ppArray[0] = new PersegiPanjangMain();
         ppArray[0].panjang = 110;
         ppArray[0].lebar = 30;
 
-        ppArray[1] = new PersegiPanjang();
+        ppArray[1] = new PersegiPanjangMain();
         ppArray[1].panjang = 80;
         ppArray[1].lebar = 40;
 
-        ppArray[2] = new PersegiPanjang();
+        ppArray[2] = new PersegiPanjangMain();
         ppArray[2].panjang = 100;
         ppArray[2].lebar = 20;
 
