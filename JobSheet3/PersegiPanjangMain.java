@@ -3,7 +3,8 @@ import java.util.Scanner;
 public class PersegiPanjangMain {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        PersegiPanjang[] ppArray = new PersegiPanjang[3];
+        System.out.print("Masukan jumlah data: ");
+        PersegiPanjang[] ppArray = new PersegiPanjang[sc.nextInt()];
 
         
         for (int i = 0; i < ppArray.length; i++) {
