@@ -27,6 +27,18 @@ public class dataMhsMain {
             System.out.println("Jenis Kelamin: "+dMhs[i].jenisKelamin);
             System.out.println("IPK: "+dMhs[i].ipk);
         }
+
+        dataMhs data = new dataMhs();
+        System.out.println("Rata - rata IPK: "+ data.rataRataIPK(dMhs));
+        
+        dataMhs mahasiswaTerbesar = new dataMhs();
+        mahasiswaTerbesar = mahasiswaTerbesar.mahasiswaTerbesarIPK(dMhs);
+
+        if (mahasiswaTerbesar != null) {
+            System.out.println("Mahasiswa dengan IPK terbesar: \n" + mahasiswaTerbesar.toString());
+        } else {
+            System.out.println("Tidak ada data mahasiswa.");
+        }   
         
     }
 }
