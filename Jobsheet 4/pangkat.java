@@ -1,6 +1,15 @@
 public class pangkat {
     public int nilai, pangkat;
 
+    public pangkat(){
+
+    }
+
+    public pangkat(int nilai, int pangkat){
+        this.nilai = nilai;
+        this.pangkat = pangkat;
+    }
+
     int pangkatBF(int a, int n){
         int hasil = 1;
         for (int i = 0; i < n; i++) {
@@ -14,12 +23,10 @@ public class pangkat {
             return 1;
         } else{ 
             if (n % 2 == 1) {
-                System.out.println(a);
             return a * pangkatDC(a, n - 1);
                 
             } else {
             int hasil = pangkatDC(a, n / 2);
-            System.out.println(hasil);
             return hasil * hasil;
             }
         }
