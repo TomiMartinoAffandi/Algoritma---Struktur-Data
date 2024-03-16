@@ -29,12 +29,13 @@ public class Aksesoris26 {
         return totalPenjualan = harga26*terjual26;
     }
 
-    // public void cariAksesorisTermurah(int[] hargaTerendah){
-    //     hargaTerendah;
-    //     if (hargaTerendah == 5000) {
-    //         tampil();
-    //     }
-    // }
+    public void cariAksesorisTermurah(int[] hargaTerendah){
+        key = 5000
+        hargaTerendah;
+        if (hargaTerendah == key) {
+            tampil();
+        }
+    }
 
     public void daftarAksesoris(){
         
