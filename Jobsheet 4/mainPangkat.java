@@ -14,21 +14,32 @@ public class mainPangkat {
             System.out.print("Masukan nilai pemangkat: ");
             png[i].pangkat = sc.nextInt();
         }
+        System.out.println("Pilih Metode: \n1. Brute Force\n2. Divided and Conquer");
+        System.out.print("Input: ");
+        int Pilih = sc.nextInt(); 
 
-        System.out.println("HASIL PANGKAT - BRUTE FORCE: ");
-        for (int i = 0; i < elemen; i++) {
-            System.out.println("Hasil dari " + png[i].nilai + " pangkat " + png[i].pangkat + " adalah: " + png[i].pangkatBF(png[i].nilai, png[i].pangkat));
-        }
+        switch (Pilih) {
+            case 1:
+            System.out.println("HASIL PANGKAT - BRUTE FORCE: ");
+            for (int i = 0; i < elemen; i++) {
+                System.out.println("Hasil dari " + png[i].nilai + " pangkat " + png[i].pangkat + " adalah: " + png[i].pangkatBF(png[i].nilai, png[i].pangkat));
+            }   
+            break;
         
-        System.out.println("HASIL PANGKAT - DIVIDED and CONQUER");
-        for (int i = 0; i < png.length; i++) {
-            System.out.println("Hasil dari " + png[i].nilai + " pangkat " + png[i].pangkat + " adalah: " + png[i].pangkatDC(png[i].nilai, png[i].pangkat));
-            
+            case 2:
+            System.out.println("HASIL PANGKAT - DIVIDED and CONQUER");
+            for (int i = 0; i < png.length; i++) {
+                System.out.println("Hasil dari " + png[i].nilai + " pangkat " + png[i].pangkat + " adalah: " + png[i].pangkatDC(png[i].nilai, png[i].pangkat));
+                
+            }
+            break;
         }
 
-        pangkat png1 = new pangkat();
-        System.out.println("HASIL PANGKAT - BRUTE FORCE & DIVIDED and CONQUER");
-        System.out.println("HASIL PANGKAT - BRUTE FORCE: "+png1.pangkatBF(6, 2));
-        System.out.println("HASIL PANGKAT - DIVIDED and CONQUER: "+png1.pangkatDC(6, 2));
+        
+
+        // pangkat png1 = new pangkat();
+        // System.out.println("HASIL PANGKAT - BRUTE FORCE & DIVIDED and CONQUER");
+        // System.out.println("HASIL PANGKAT - BRUTE FORCE: "+png1.pangkatBF(6, 2));
+        // System.out.println("HASIL PANGKAT - DIVIDED and CONQUER: "+png1.pangkatDC(6, 2));
     }
 }
