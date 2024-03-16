@@ -4,12 +4,18 @@ public class Faktorial {
     public int faktorialBF(int n){
         int fakto = 1;
         int i = 1;
-        while (i <= n) {
+        do {
             fakto *= i;
             i++;
-        }
+        } while (i <= n);
         return fakto;
     }
+    // int i = 1;
+    // while (i <= n) {
+    //     fakto *= i;
+    //     i++;
+    // }
+    // return fakto;
     // for (int i = 1; i <= n; i++) {
     //     fakto = fakto*i;
     // }
