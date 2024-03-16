@@ -7,7 +7,12 @@ public class mainPangkat {
         System.out.println("==========================");
         System.out.print("Masukan jumlah elemen yang dihitung: ");
         int elemen = sc.nextInt();
-
+        
+        pangkat png1 = new pangkat();
+        System.out.println("HASIL PANGKAT - BRUTE FORCE & DIVIDED and CONQUER");
+        System.out.println("HASIL PANGKAT - BRUTE FORCE: "+png1.pangkatBF(6, 2));
+        System.out.println("HASIL PANGKAT - DIVIDED and CONQUER: "+png1.pangkatDC(6, 2));
+        
         pangkat[] png = new pangkat[elemen];
         for (int i = 0; i < elemen; i++) {
             png[i] = new pangkat();
@@ -43,12 +48,5 @@ public class mainPangkat {
             }
         }
         
-
-        
-
-        // pangkat png1 = new pangkat();
-        // System.out.println("HASIL PANGKAT - BRUTE FORCE & DIVIDED and CONQUER");
-        // System.out.println("HASIL PANGKAT - BRUTE FORCE: "+png1.pangkatBF(6, 2));
-        // System.out.println("HASIL PANGKAT - DIVIDED and CONQUER: "+png1.pangkatDC(6, 2));
     }
 }
