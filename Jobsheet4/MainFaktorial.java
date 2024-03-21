@@ -22,5 +22,6 @@ public class MainFaktorial {
         for (int i = 0; i < iJml; i++) {
             System.out.println("Hasil perhitungan faktorial menggunakan Devide dan Conquer adalah: "+fk[i].faktorialDC(fk[i].nilai));
         }
+        sc.close();
     }
 }

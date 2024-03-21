@@ -15,5 +15,6 @@ public class Aksesoris26main {
             System.out.println("Penghasilan Aksesoris ke-"+ i + ": " +aksArray[i].hitungTotalPenjualan());
             // aksArray[i].cariAksesorisTermurah(aksArray[i]);
         }
+        sc.close();
     }
 }

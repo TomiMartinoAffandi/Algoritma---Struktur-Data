@@ -39,5 +39,6 @@ public class sumMain {
             System.out.println("Total Keuntungan Perusahaan ke-" + range + " selama " + sm.elemen + " bulan adalah = "
                     + sm.totalDC(sm.keuntungan, 0, sm.elemen - 1));
         }
+        sc.close();
     }
 }
