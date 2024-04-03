@@ -6,7 +6,7 @@ public class bukuMain {
         Scanner s1 = new Scanner(System.in);
 
         pencarianBuku data = new pencarianBuku();
-        int jumBuku = 0;
+        int jumBuku = 5;
 
         System.out.println("----------------------------------------");
         System.out.println("Masukan data buku sacara urut dari kode buku terkecil: ");
@@ -47,5 +47,12 @@ public class bukuMain {
         if (dataBuku != null) {
             dataBuku.tampilBuku();
         }
+        System.out.println("=========================");
+        System.out.println("Menggunakan Binary Search");
+        System.out.print("masukan kode buku : ");
+        cari = s.nextInt();
+        posisi = data.findBinarySearch(cari, 0, jumBuku - 1);
+        data.tampilPosisi(cari, posisi);
+        data.tampilData(cari, posisi);
     }
 }
