@@ -1,9 +1,19 @@
 package Jobsheet6;
 
+import java.util.List;
+
 public class pencarianBuku {
     Buku listBk[] = new Buku[5];
     int idx;
 
+    pencarianBuku(){
+        listBk[0]=new Buku(111, 2019, 5, "Algoritma", "Wahyuni");
+        listBk[1]=new Buku(123, 2020, 3, "Design UI", "Bambang");
+        listBk[2]=new Buku(125, 20221, 3, "Matematika", "Rizal");
+        listBk[3]=new Buku(126, 2022, 2, "IPA", "Sri");
+        listBk[4]=new Buku(127, 2023, 2, "IPS", "Roni");
+    }
+    
     void tambah(Buku m){
         if (idx < listBk.length) {
             listBk[idx] = m;
@@ -30,6 +40,16 @@ public class pencarianBuku {
             }
         }
         return posisi;
+    }
+
+    public Buku FindBuku(int cari){
+        int posisi = FindSeqSearch(cari);
+        if (posisi>-1) {
+            return listBk[posisi];
+        }else {
+            System.out.println("data : "+cari+" tidak ditemukan");
+            return null;
+        }
     }
 
     public void tampilPosisi(int x, int pos){

@@ -3,6 +3,9 @@ package Jobsheet6;
 public class Buku {
     int kodeBuku, tahunTerbit, stock;
     String judulBuku, Pengarang;
+    int idx;
+
+    pencarianBuku dataBuku[] = new pencarianBuku[5];
 
     public Buku(){
         

@@ -1,14 +1,12 @@
 package Jobsheet6;
 import java.util.Scanner;
-
-import javax.sound.midi.Soundbank;
 public class bukuMain {
     public static void main(String[] args) {
         Scanner s = new Scanner(System.in);
         Scanner s1 = new Scanner(System.in);
 
         pencarianBuku data = new pencarianBuku();
-        int jumBuku = 5;
+        int jumBuku = 0;
 
         System.out.println("----------------------------------------");
         System.out.println("Masukan data buku sacara urut dari kode buku terkecil: ");
@@ -29,10 +27,10 @@ public class bukuMain {
             data.tambah(m);
         }
 
+
         System.out.println("----------------------------------------------------------");
         System.out.println("Data Keseluruhan Buku : ");
         data.tampil();
-        
         System.out.println("----------------------------------------------------------");
         System.out.println("----------------------------------------------------------");
         System.out.println("Pencarian Data : ");
@@ -43,5 +41,11 @@ public class bukuMain {
         int posisi = data.FindSeqSearch(cari);
         data.tampilPosisi(cari, posisi);
         data.tampilData(cari, posisi);
+        System.out.print("Cari Buku : ");
+        cari = s.nextInt();
+        Buku dataBuku = data.FindBuku(cari);
+        if (dataBuku != null) {
+            dataBuku.tampilBuku();
+        }
     }
 }
