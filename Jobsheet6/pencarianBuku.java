@@ -79,9 +79,9 @@ public class pencarianBuku {
             if (cari == listBk[mid].kodeBuku) {
                 return(mid);
             } else if (listBk[mid].kodeBuku > cari) {
-                return findBinarySearch(cari, left, mid - 1);
+                return findBinarySearch(cari, mid + 1, right);
             } else if (listBk[mid].kodeBuku < cari) {
-                return findBinarySearch(cari, mid + 1, right);   
+                return findBinarySearch(cari, left, mid -1);   
             }
         }
         return -1;
