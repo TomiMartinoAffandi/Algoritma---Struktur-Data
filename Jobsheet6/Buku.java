@@ -1,9 +1,8 @@
 package Jobsheet6;
 
 public class Buku {
-    String kodeBuku; // Changed type to String
     int tahunTerbit, stock;
-    String judulBuku, Pengarang;
+    String kodeBuku, judulBuku, Pengarang;
     int idx;
 
     pencarianBuku dataBuku[] = new pencarianBuku[5];
@@ -12,7 +11,7 @@ public class Buku {
 
     }
 
-    public Buku(String kodeBuku, int tahunTerbit, int stock, String judulBuku, String Pengarang){ // Changed parameter type to String
+    public Buku(String kodeBuku, int tahunTerbit, int stock, String judulBuku, String Pengarang){ 
         this.kodeBuku = kodeBuku;
         this.tahunTerbit = tahunTerbit;
         this.stock = stock;

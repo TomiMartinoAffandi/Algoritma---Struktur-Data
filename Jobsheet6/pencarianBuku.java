@@ -29,20 +29,20 @@ public class pencarianBuku {
         }
     }
 
-    public int FindSeqSearch(String cari){ // Changed parameter type to String
+    public int FindSeqSearch(String cari){ 
         int posisi = 0;
         for (int i = 0; i < listBk.length; i++) {
-            if (listBk[i].kodeBuku.equals(cari)) { // Changed comparison to String.equals()
+            if (listBk[i].kodeBuku.equals(cari)) { 
                 posisi=i;
                 break;
-            }else if (!listBk[i].kodeBuku.equals(cari)) { // Changed comparison to String.equals()
+            }else if (!listBk[i].kodeBuku.equals(cari)) { 
                 posisi--;
             }
         }
         return posisi;
     }
 
-    public Buku FindBuku(String cari){ // Changed parameter type to String
+    public Buku FindBuku(String cari){ 
         int posisi = FindSeqSearch(cari);
         if (posisi>-1) {
             return listBk[posisi];
@@ -52,7 +52,7 @@ public class pencarianBuku {
         }
     }
 
-    public void tampilPosisi(String x, int pos){ // Changed parameter type to String
+    public void tampilPosisi(String x, int pos){ 
         if (pos>-1) {
             System.out.println("data : "+x+" ditemukan pada indeks "+pos);
         }else {
@@ -60,9 +60,9 @@ public class pencarianBuku {
         }
     }
 
-    public void tampilData(String x, int pos){ // Changed parameter type to String
+    public void tampilData(String x, int pos){ 
         if (pos>-1) {
-            System.out.println("Kode buku \t: "+x);
+            System.out.println("Kode buku \t: "+listBk[pos].kodeBuku);
             System.out.println("Judul Buku \t: "+listBk[pos].judulBuku);
             System.out.println("Tahun terbit \t: "+listBk[pos].tahunTerbit);
             System.out.println("Pengarang \t: "+listBk[pos].Pengarang);
@@ -72,18 +72,58 @@ public class pencarianBuku {
         }
     }
 
-    public int findBinarySearch(String cari, int left, int right){ // Changed parameter type to String
+    public int findBinarySearch(String cari, int left, int right){ 
         int mid;
         if (right >= left) {
             mid = (left + right)/2;
-            if (cari.equals(listBk[mid].kodeBuku)) { // Changed comparison to String.equals()
+            if (cari.equals(listBk[mid].kodeBuku)) { 
                 return(mid);
-            } else if (listBk[mid].kodeBuku.compareTo(cari) < 0) { // Changed comparison to String.compareTo()
+            } else if (listBk[mid].kodeBuku.compareTo(cari) < 0) { 
                 return findBinarySearch(cari, mid + 1, right);
-            } else if (listBk[mid].kodeBuku.compareTo(cari) > 0) { // Changed comparison to String.compareTo()
+            } else if (listBk[mid].kodeBuku.compareTo(cari) > 0) { 
                 return findBinarySearch(cari, left, mid -1);
             }
         }
         return -1;
+    }
+
+    public int FindSeqSearchByJudul(String cari){ 
+        int posisi = -1;
+        for (int i = 0; i < listBk.length; i++) {
+            if (listBk[i].judulBuku.equals(cari)) { 
+                posisi = i;
+                break;
+            }
+        }
+        return posisi;
+    }
+
+    public int FindBinarySearchByJudul(String cari, int left, int right){ 
+        int mid;
+        if (right >= left) {
+            mid = (left + right)/2;
+            if (cari.equals(listBk[mid].judulBuku)) { 
+                return(mid);
+            } else if (listBk[mid].judulBuku.compareTo(cari) < 0) {
+                return FindBinarySearchByJudul(cari, mid + 1, right);
+            } else if (listBk[mid].judulBuku.compareTo(cari) > 0) {
+                return FindBinarySearchByJudul(cari, left, mid - 1);   
+            }
+        }
+        return -1;
+    }
+
+    public void bubbleSortByJudul() {
+        int n = listBk.length;
+        Buku temp;
+        for (int i = 0; i < n-1; i++) {
+            for (int j = 0; j < n-i-1; j++) {
+                if (listBk[j].judulBuku.compareTo(listBk[j+1].judulBuku) > 0) {
+                    temp = listBk[j];
+                    listBk[j] = listBk[j+1];
+                    listBk[j+1] = temp;
+                }
+            }
+        }
     }
 }
