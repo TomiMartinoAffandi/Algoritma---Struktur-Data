@@ -73,7 +73,7 @@ public class Gudang26 {
 
     public String konversiBiner(int kode){
         StackKonversi26 stack = new StackKonversi26();
-        while (kode > 0) {
+        while (kode != 0) {
             int sisa = kode % 2;
             stack.push(sisa);
             kode = kode/2;
