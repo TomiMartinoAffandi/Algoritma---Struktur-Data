@@ -3,8 +3,8 @@ package Jobsheet7;
 import java.util.Scanner;
 public class utama26 {
     public static void main(String[] args) {
-        Gudang26 gudang = new Gudang26(7);
         Scanner sc = new Scanner(System.in);
+        Gudang26 gudang = new Gudang26(sc.nextInt());
 
         while (true) {
             System.out.println("\nMenu  ");
@@ -18,12 +18,12 @@ public class utama26 {
 
             switch (pilihan) {
                 case 1:
-                    System.out.println("Masukan kode barang: ");
+                    System.out.print("Masukan kode barang: ");
                     int kode = sc.nextInt();
                     sc.nextLine();
-                    System.out.println("Masukan nama barang: ");
+                    System.out.print("Masukan nama barang: ");
                     String nama = sc.nextLine();
-                    System.out.println("Masukan kategori barang");
+                    System.out.print("Masukan kategori barang: ");
                     String kategori = sc.nextLine();
                     Barang26 barangBaru = new Barang26(kode, nama, kategori);
                     gudang.tambahBarang(barangBaru);
@@ -36,6 +36,7 @@ public class utama26 {
                     gudang.tampilkanBarang();
                     break;
                 case 4:
+                    System.exit(0);
                     break;
                 default:
                     System.out.println("pilihan tidak valid. Silahkan coba lagi");
