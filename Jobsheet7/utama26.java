@@ -4,6 +4,7 @@ import java.util.Scanner;
 public class utama26 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+        System.out.print("Masukan kapasitas barang yang dapat ditampung: ");
         Gudang26 gudang = new Gudang26(sc.nextInt());
 
         while (true) {
