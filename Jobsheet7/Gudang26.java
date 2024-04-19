@@ -85,4 +85,30 @@ public class Gudang26 {
         }
         return biner;
     }
+
+    public Barang26 lihatBarangTerbawah(){
+        if (!cekKosong()) {
+            Barang26 barangTeratas = tumpukan[0];
+            System.out.println("Barang terbawah "+barangTeratas.nama);
+            return barangTeratas;
+        }else {
+            System.out.println("tumpukan barang kosong");
+            return null;
+        }
+    }
+
+    public String FindSeqSearchByNama(String cari){ 
+        if (!cekKosong()) {
+            for (int i = 0; i < tumpukan.length; i++) {
+                if (tumpukan[i].nama.equals(cari)) { 
+                    return tumpukan[i].nama;
+                }
+                if (String.valueOf(tumpukan[i].kode).equals(cari)) { 
+                    return String.valueOf(tumpukan[i].kode);
+                }
+            }
+        }
+        System.out.println("produk tidak ditemukan");
+        return null;
+    }
 }
