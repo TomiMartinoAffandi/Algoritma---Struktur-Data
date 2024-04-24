@@ -23,10 +23,10 @@ public class sum {
         }else if (l < r) {
             int mid = (l + r) / 2;
             double rsum = totalDC(arr, mid+1, r);
-            System.out.println("rsum: "+rsum);
+            //System.out.println("rsum: "+rsum);
             double lsum = totalDC(arr, l,mid-1);
-            System.out.println("lsum: "+lsum);
-            System.out.println("arr mid:"+arr[mid]);
+            // System.out.println("lsum: "+lsum);
+            // System.out.println("arr mid:"+arr[mid]);
             return lsum+rsum+arr[mid];
         }
         return 0;
