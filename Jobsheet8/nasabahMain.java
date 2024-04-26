@@ -5,8 +5,9 @@ public class nasabahMain {
         System.out.println("1. Antrian baru");
         System.out.println("2. Antrian keluar");
         System.out.println("3. Cek antrian terdepan");
-        System.out.println("4. Cek semua antrian");
-        System.out.println("5. Exit");
+        System.out.println("4. Cek antrian paling belakang");
+        System.out.println("5. Cek semua antrian");
+        System.out.println("6. Exit");
         System.out.println("-----------------------------");
         System.out.print("pilih menu: ");
     }
@@ -41,16 +42,20 @@ public class nasabahMain {
                 case 2:
                     Nasabah data = antri.dequeue();
                     if (!"".equals(data.norek)&&!"".equals(data.nama)&&!"".equals(data.alamat)&& data.umur != 0 && data.saldo != 0) {
-                        System.out.println("Antrian yang keluar: "+data.norek+""+data.nama+""+data.alamat+""+data.umur+""+data.saldo+"");
+                        System.out.println("Antrian yang keluar: " + data.norek + " "+data.nama + " " + data.alamat + 
+                        " " + data.umur + " " + data.saldo + " ");
                         break;
                     }
                 case 3:
                     antri.peek();
                     break;
                 case 4:
-                    antri.print();
+                    antri.peekRear();
                     break;
                 case 5:
+                    antri.print();
+                    break;
+                case 6:
                     System.exit(0);
                     break;
                 default:
