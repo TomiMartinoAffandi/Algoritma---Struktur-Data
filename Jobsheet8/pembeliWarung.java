@@ -1,27 +1,24 @@
 package Jobsheet8;
-public class Nasabah {
-    String norek, nama, alamat;
-    int umur;
-    double saldo;
 
-    Nasabah(){
+public class pembeliWarung {
+    String nama;
+    int noHp;
+
+    pembeliWarung(){
 
     }
 
-    Nasabah (String norek, String nama, String alamat, int umur, double saldo){
-        this.norek = norek;
-        this.nama = nama;
-        this.alamat = alamat;
-        this.umur = umur;
-        this.saldo = saldo;
+    pembeliWarung(String nama, int noHp){
+        this.nama=nama;
+        this.noHp=noHp;
     }
 
-    Nasabah[] data;
+    pembeliWarung[] data;
     int front, rear, size, max;
 
-    public Nasabah(int n){
+    public pembeliWarung(int n){
         max = n;
-        data = new Nasabah[max];
+        data = new pembeliWarung[max];
         size = 0;
         front = rear = -1;
     }
@@ -43,8 +40,7 @@ public class Nasabah {
 
     public void peek(){
         if (!isEmpty()) {
-            System.out.println("Elemen terdepan: "+data[front].norek + " " + data[front].nama + " " + data[front].alamat +
-             " " + data[front].umur + " " + data[front].saldo);
+            System.out.println("Elemen terdepan: "+data[front].nama + " " + data[front].noHp);
         } else {
             System.out.println("queue masih kosong");
         }
@@ -52,8 +48,7 @@ public class Nasabah {
 
     public void peekRear(){
         if (!isEmpty()) {
-            System.out.println("Elemen paling belakang: "+data[rear].norek + " " + data[rear].nama + " " + data[rear].alamat +
-             " " + data[rear].umur + " " + data[rear].saldo);
+            System.out.println("Elemen paling belakang: "+data[rear].nama + " " + data[rear].noHp);
         } else {
             System.out.println("queue masih kosong");
         }
@@ -65,12 +60,10 @@ public class Nasabah {
         }else {
             int i = front;
             while (i != rear) {
-                System.out.println(data[i].norek + " " + data[i].nama + " " + data[i].alamat + 
-                " " + data[i].umur + " " + data[i].saldo);
+                System.out.println(data[i].nama + " " + data[i].noHp);
                 i = (i+1) % max;
             }
-            System.out.println(data[i].norek + " " + data[i].nama + " " + data[i].alamat + 
-            " " + data[i].umur + " " + data[i].saldo);
+            System.out.println(data[i].nama + " " + data[i].noHp);
             System.out.println("jumlah elemen = "+size);
         }
     }
@@ -85,7 +78,7 @@ public class Nasabah {
         }
     }
 
-    public void enqueue(Nasabah dt){
+    public void enqueue(pembeliWarung dt){
         if (isFull()) {
             System.out.println("queue sudah penuh");
         }else {
@@ -103,8 +96,8 @@ public class Nasabah {
         }
     }
 
-    public Nasabah dequeue(){
-        Nasabah dt = new Nasabah()  ;
+    public pembeliWarung dequeue(){
+        pembeliWarung dt = new pembeliWarung();
         if (isEmpty()) {
             System.out.println("queue masih kosong");
         }else {
@@ -121,5 +114,24 @@ public class Nasabah {
             }
         }
         return dt;
+    }
+
+    public int findPembeli(String cari){ 
+        int posisi = -1;
+        for (int i = 0; i < max; i++) {
+            if (data[i].nama.equals(cari)) { 
+                posisi = i;
+                break;
+            }
+        }
+        return posisi;
+    }
+
+    public void tampilPosisi(String x, int pos){
+        if (pos>-1) {
+            System.out.println("data : "+x+" ditemukan pada antrian ke: "+(pos+1));
+        }else {
+            System.out.println("data : "+x+" tidak ditemukan");
+        }
     }
 }
