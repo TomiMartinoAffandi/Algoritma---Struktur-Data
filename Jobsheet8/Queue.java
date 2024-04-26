@@ -35,13 +35,14 @@ public class Queue {
     }
 
     public void print(){
-        if (!isEmpty()) {
+        if (isEmpty()) {
             System.out.println("queue masih kosong");
         }else {
             int i = front;
-            while (i != rear) {
+            while (i != rear) {System.out.println(i);
                 System.out.println(data[i]+" ");
                 i = (i+1) % max;
+                System.out.println(i);
             }
             System.out.println(data[i]+" ");
             System.out.println("jumlah elemen = "+size);
@@ -61,6 +62,7 @@ public class Queue {
     public void enqueue(int dt){
         if (isFull()) {
             System.out.println("queue sudah penuh");
+            System.exit(0);
         }else {
             if (isEmpty()) {
                 front = rear = 0;
@@ -80,6 +82,7 @@ public class Queue {
         int dt = 0;
         if (isEmpty()) {
             System.out.println("queue masih kosong");
+            System.exit(0);
         }else {
             dt = data[front];
             size--;
@@ -95,6 +98,4 @@ public class Queue {
         }
         return dt;
     }
-
-    
 }
