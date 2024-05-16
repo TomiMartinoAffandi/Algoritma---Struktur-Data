@@ -12,7 +12,11 @@ public class DLLMain {
         dll.print();
         System.out.println("Size: "+dll.size());
         System.out.println("====================================");
-        dll.add(40, 1);
+        try {
+            dll.add(40, 1);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
         dll.print();
         System.out.println("Size: "+dll.size());
         System.out.println("====================================");
