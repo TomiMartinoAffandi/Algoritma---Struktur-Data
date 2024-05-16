@@ -20,6 +20,21 @@ public class DLLMain {
         dll.print();
         System.out.println("Size: "+dll.size());
         System.out.println("====================================");
+        try {
+            System.out.println("data awal pada linked list: "+dll.getFirst());
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        try {
+            System.out.println("data akhir pada linked list: "+dll.getLast());
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        try {
+            System.out.println("data ke-1 pada linked list: "+dll.get(1));
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
         dll.clear();
         dll.print();
         System.out.println("Size: "+dll.size());
@@ -54,6 +69,5 @@ public class DLLMain {
         dll.print();
         System.out.println("Size: "+dll.size());
         System.out.println("====================================");
-        
     }
 }
