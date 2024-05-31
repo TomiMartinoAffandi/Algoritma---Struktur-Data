@@ -41,11 +41,11 @@ public class BinaryTree26 {
     boolean find(int data){
         boolean result = false;
         Node26 current = root;
-        while (current==null) {
-            if (current.data!=data) {
+        while (current!=null) {
+            if (current.data==data) {
                 result = true;
                 break;
-            }else if (data>current.data) {
+            }else if (data<current.data) {
                 current = current.left;
             }else{
                 current = current.right;
@@ -94,7 +94,7 @@ public class BinaryTree26 {
     }
 
     void delete(int data){
-        if (isEmpty()) {
+        if (!isEmpty()) {
             System.out.println("tree is empty");
             return;
         }
@@ -163,6 +163,4 @@ public class BinaryTree26 {
             }
         }
     }
-
-
 }
