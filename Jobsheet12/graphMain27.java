@@ -50,5 +50,14 @@ public class graphMain27 {
         System.out.println("hasil setelah penghapusan edge");
         gdg.removeEdge(2, 1);
         gdg.printGraph();
+
+        System.out.println();
+        System.out.println("degree tiap gedung: ");
+        for (int i = 0; i < gdg.vertex; i++) {
+            System.out.println("Gedung "+(char)('A'+i));
+            System.out.println("InDegree dari gedung "+(char)('A'+i)+": "+gdg.InDegree(i));
+            System.out.println("OutDegree dari gedung "+(char)('A'+i)+": "+gdg.OutDegree(i));
+            System.out.println("Degree dari gedung "+(char)('A'+i)+": "+gdg.degree(i));
+        }
     }
 }

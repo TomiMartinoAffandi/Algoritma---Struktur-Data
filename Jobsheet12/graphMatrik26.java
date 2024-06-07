@@ -28,4 +28,28 @@ public class graphMatrik26 {
             System.out.println();
         }
     }
+
+    public int InDegree(int asal){
+        int totalIn = 0;
+        for (int i = 0; i < vertex; i++) {
+            if (matriks[i][asal] != 0) {
+                totalIn++;
+            }
+        }
+        return totalIn;
+    }
+
+    public int OutDegree(int asal){
+        int totalOut = 0;
+        for (int i = 0; i < vertex; i++) {
+            if (matriks[asal][i] != 0) {
+                totalOut++;
+            }
+        }
+        return totalOut;
+    }
+
+    public int degree(int asal){
+        return InDegree(asal) + OutDegree(asal);
+    }
 }
