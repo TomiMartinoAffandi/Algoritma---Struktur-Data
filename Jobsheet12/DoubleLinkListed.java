@@ -18,14 +18,11 @@ public class DoubleLinkListed {
     public void addFirst(int item, int jarak){
         if (isEmpty()) {
             head = new node27(null, item, jarak, null);
-        }else{
-            node27 current = head;
-            while (current.next != null) {
-                current =current.next;
-            }
-            node27 newnode27 = new node27(null, item, jarak, head);
-            current.next = newnode27;
-            
+        }
+        else{
+            node27 newNode27 = new node27(null, item, jarak, head);
+            head.prev = newNode27;
+            head = newNode27;
         }
         size++;
     }
