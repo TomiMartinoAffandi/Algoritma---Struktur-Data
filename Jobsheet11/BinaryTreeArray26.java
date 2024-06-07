@@ -15,8 +15,10 @@ public class BinaryTreeArray26 {
 
     void traverseInOrder(int idxStart){
         if (idxStart<=idxLast) {
+            //System.out.print(idxStart);
             traverseInOrder(2*idxStart+1);
-            System.out.print(data[idxStart]+" ");
+            System.out.print(idxStart);
+            //ystem.out.print(data[idxStart]+" ");
             traverseInOrder(2*idxStart+2);
         }
     }
